@@ -25,6 +25,8 @@ def save_task():
             messagebox.showinfo("Saved", "File saved successfully!")
         except:
             messagebox.showerror("Error", "Could not save file!")
+
+
 def open_file():
 	# open the file dialog window on the screen when "Open" button is clicked
 	# "Text Files" is the label shows in the file dialog dropdown 
@@ -54,7 +56,6 @@ def on_mouse_wheel(event):
 	# event.delta is the amount of scroll
 	# positive value means scroll down, negative means scroll up
 	text_box.yview_scroll(int(-1*(event.delta/120)), "units")
-
 
 
 # create window
@@ -95,7 +96,14 @@ scroll_bar.grid(row=1, column=1, padx=(5,10),sticky='ns')
 text_box.config(yscrollcommand=scroll_bar.set)
 
 # add "save" buttons
-save_button = tk.Button(root,text='Save', width=8, height=2, bg='lightblue', fg='black', activebackground='darkblue', activeforeground='white',command=save_task)
+save_button = tk.Button(root,text='Save', 
+	width=8, 
+	height=2, 
+	bg='lightblue', 
+	fg='black', 
+	activebackground='darkblue', 
+	activeforeground='white',
+	command=save_task)
 save_button.grid(row=0, column=0, sticky='ne', padx=108, pady=3)
 
 
